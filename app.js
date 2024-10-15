@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     setInterval(changeImage, 5000);
 
     // typewritereffect
-    const words = ["twoją Nieruchomością", "twoim Mieszkaniem", "twoim Domem", "twoim Biurem", "twoją Działką"];
+    const words = ["twoją nieruchomością", "twoim mieszkaniem", "twoim domem", "twoim biurem", "twoją działką"];
     let wordIndex = 0;
     let charIndex = 0;
     let currentWord = '';
