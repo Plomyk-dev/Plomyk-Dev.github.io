@@ -7,11 +7,11 @@
     <link href="./output.css" rel="stylesheet">
     <script src="particles.js"></script>
     <!-- <link href="./style.css" rel="stylesheet"> -->
-    <script src="./app.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9643de004c.js" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
 </head>
 <style>
     .underline-animation {
@@ -48,13 +48,13 @@
     }
 </style>
 <body>
-    <nav class="fixed flex gap-4" style="z-index: 99999999;">
+    <!-- <nav class="fixed flex gap-4" style="z-index: 99999999;">
         <img class="ml-4" src="https://picsum.photos/50" alt="Logo of the alternatywne-biuro.pl company">
         <div class="underline-animation"><a class="underline-animation" href="#main">Strona główna</a></div>
         <div class="underline-animation"><a class="underline-animation" href="#aboutus">O nas</a></div>
         <div class="underline-animation"><a class="underline-animation" href="#contact">Kontakt</a></div>
-    </nav>
-    <div class="flex items-center justify-center h-screen bg-gray-100 smoothAnim" id="main">
+    </nav> -->
+    <!-- <div class="flex items-center justify-center h-screen bg-gray-100 smoothAnim" id="main">
         <div class="grid grid-cols-2 gap-4 p-8 bg-white rounded-lg shadow-lg w-12xl" style="min-width: 60%;">
             <div class="flex flex-col justify-center">
                 <p class="text-sm text-gray-500 uppercase tracking-wide">// alternatywne-biuro.pl</p>
@@ -75,11 +75,40 @@
                 <img src="./assets/1_1.jpg" alt="Photo of property" class="object-cover transform rotate-2 shadow-lg w-10 h-2" style="width: 40rem; height: 30rem;">
             </div>
         </div>
-    </div>
+    </div> -->
+    <section class="relative bg-cover bg-center bg-no-repeat image-url-smooth mb-8" id="slideshow-image">
+        <div class="absolute inset-0 bg-gray-900/75 bg-transparent from-gray-900/95 to-gray-900/25 bg-gradient-to-r bg-gradient-to-l"></div>
 
-    <section class="py-12 bg-gray-100 smoothAnim" id="aboutus">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-left mb-10">
+        <div class="relative mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+            <div class="max-w-xl">
+                <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
+                    Alternatywne Biuro
+                </h1>
+
+                <p class=" max-w-lg text-white sm:text-xl/relaxed">
+                    Zajmiemy się <span class="typewriter"></span>
+                </p>
+                <p class="mt-2 max-w-lg text-gray-300 sm:text-base/relaxed">
+                    Pomożemy ci osiągnąć najwyższą możliwą cenę.
+                </p>
+                <p class="mt-1 max-w-lg text-gray-300 sm:text-base/relaxed">
+                    Przekonaj się że współpraca z nami to doskonała inwestycja która zaoszczędzi ci czas.
+                </p>
+
+                <div class="mt-8 flex flex-wrap gap-4 text-center">
+                    <a href="#aboutus" class="transition block w-full rounded bg-white px-12 py-3 text-sm font-medium text-gray-900 shadow hover:text-white hover:bg-gray-900 focus:outline-none focus:ring active:text-gray-500 sm:w-auto">
+                        Dowiedz się więcej
+                    </a>
+                    <a href="#contact" class="transition block w-full rounded bg-white px-12 py-3 text-sm font-medium text-gray-900 shadow hover:text-white hover:bg-gray-900 focus:outline-none focus:ring active:text-gray-500 sm:w-auto">
+                        Kontakt
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-gray-100 smoothAnim" id="aboutus">
+        <div class="mx-auto px-4">
+            <div class="text-left mb-4">
                 <h2 class="text-4xl font-bold text-gray-800">// O nas</h2>
             </div>
 
@@ -105,7 +134,7 @@
                 </div>
 
                 <div class="flex items-center justify-center">
-                    <img src="./assets/2_1.jpg" alt="Nasz zespół" class="rounded-lg shadow-lg">
+                    <img src="./assets/2_2.jpg" alt="Nasz zespół" class="rounded-lg shadow-lg">
                 </div>
             </div>
 
@@ -145,8 +174,8 @@
     
     <section class="bg-gray-100 font-sans antialiased smoothAnim" id="contact">
         <div class="py-12">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="mb-6">
+            <div class="mx-auto px-4">
+                <div class="mb-4">
                     <h2 class="text-4xl font-bold text-gray-800">// Kontakt</h2>
                 </div>
     
@@ -178,11 +207,11 @@
                     </div>
                 </div>
 
-                <div class="mb-6">
+                <div class="mb-4">
                     <h2 class="text-4xl font-bold text-gray-800">// Obszar działania</h2>
                 </div>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2947148415305!2d-74.01493547335302!3d40.71152823764361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a19881b83fb%3A0x979b0a4fe0492ce6!2sWorld%20Trade%20Center%2C%20Nowy%20Jork%2C%20Stany%20Zjednoczone!5e0!3m2!1spl!2spl!4v1728326170721!5m2!1spl!2spl" style="width: 100%; height: 40rem; outline: 2px solid #33333322; outline-offset: 3px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2947148415305!2d-74.01493547335302!3d40.71152823764361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a19881b83fb%3A0x979b0a4fe0492ce6!2sWorld%20Trade%20Center%2C%20Nowy%20Jork%2C%20Stany%20Zjednoczone!5e0!3m2!1spl!2spl!4v1728326170721!5m2!1spl!2spl" style="width: 100%; height: 40rem; outline: 2px solid #33333322; outline-offset: 3px;" allowfullscreen=" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>

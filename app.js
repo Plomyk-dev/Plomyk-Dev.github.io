@@ -1,29 +1,45 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+    console.log('DOM loaded')
     // Rotate effect
-    const tiltImageContainer = document.querySelector('.tilt-image');
-    const image = tiltImageContainer.querySelector('img');
+    // const tiltImageContainer = document.querySelector('.tilt-image');
+    // const image = tiltImageContainer.querySelector('img');
 
-    tiltImageContainer.addEventListener('mousemove', (e) => {
-        const width = tiltImageContainer.offsetWidth;
-        const height = tiltImageContainer.offsetHeight;
-        const centerX = tiltImageContainer.offsetLeft + width / 2;
-        const centerY = tiltImageContainer.offsetTop + height / 2;
-        const mouseX = e.clientX - centerX;
-        const mouseY = e.clientY - centerY;
+    // tiltImageContainer.addEventListener('mousemove', (e) => {
+    //     const width = tiltImageContainer.offsetWidth;
+    //     const height = tiltImageContainer.offsetHeight;
+    //     const centerX = tiltImageContainer.offsetLeft + width / 2;
+    //     const centerY = tiltImageContainer.offsetTop + height / 2;
+    //     const mouseX = e.clientX - centerX;
+    //     const mouseY = e.clientY - centerY;
 
-        const rotateX = (mouseY / height) * -20;
-        const rotateY = (mouseX / width) * 20;
+    //     const rotateX = (mouseY / height) * -20;
+    //     const rotateY = (mouseX / width) * 20;
 
-        image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
+    //     image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    // });
 
-    tiltImageContainer.addEventListener('mouseleave', () => {
-        image.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
+    // tiltImageContainer.addEventListener('mouseleave', () => {
+    //     image.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    // });
 
+
+    const images = ['./assets/3_1.jpg', './assets/3_2.jpg'];
+    let currentImageIndex = 0;
+    const imageElement = document.getElementById('slideshow-image');
+    function changeImage() {
+        // imageElement.style.opacity = 0;
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        imageElement.style.backgroundImage = `url(${images[currentImageIndex]})`;
+        // setTimeout(() => {
+
+        //     // imageElement.style.opacity = 1;
+        // }, 1000); 
+    }
+    
+    setInterval(changeImage, 5000);
 
     // typewritereffect
-    const words = ["Nieruchomością", "Mieszkaniem", "Domem", "Biurem", "Działką"];
+    const words = ["twoją Nieruchomością", "twoim Mieszkaniem", "twoim Domem", "twoim Biurem", "twoją Działką"];
     let wordIndex = 0;
     let charIndex = 0;
     let currentWord = '';
@@ -55,14 +71,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 wordIndex++;
             }
         }
-        setTimeout(type, isDeleting ? 150 / 2 : 150);
+        setTimeout(type, isDeleting ? 100 / 2 : 100);
     }
     type()
 });
-
-// particlesJS.load('particles-js', 'particles.json', function() {
-//     console.log('callback - particles.js config loaded');
-// });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
