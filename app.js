@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log('DOM loaded')
+    var data = new Date()
     // Rotate effect
     // const tiltImageContainer = document.querySelector('.tilt-image');
     // const image = tiltImageContainer.querySelector('img');
@@ -23,23 +24,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // });
 
 
-    const images = ['./assets/3_1.jpg', './assets/3_2.jpg'];
-    let currentImageIndex = 0;
-    const imageElement = document.getElementById('slideshow-image');
-    function changeImage() {
-        // imageElement.style.opacity = 0;
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        imageElement.style.backgroundImage = `url(${images[currentImageIndex]})`;
-        // setTimeout(() => {
+    const images = [
+        './assets/3_1.jpg',
+        './assets/3_2.jpg',
+        './assets/3_3.jpg',
+        './assets/3_4.jpg',
+      ]
+      window.onload = () => {
+        // preloading
+        document.querySelector('#slideshow-image').style.backgroundImage = `url(${images[0]})`
+        document.querySelector('.hidden').src = images[1]
+        let i = 1
+        setInterval(() => {
+          document.querySelector('#slideshow-image').style.backgroundImage = `url(${images[i++]})`
 
-        //     // imageElement.style.opacity = 1;
-        // }, 1000); 
-    }
-    
-    setInterval(changeImage, 5000);
-
+          if (i === images.length) i = 0
+          else {
+            document.querySelector('.hidden').src = images[i]
+          }
+        }, 7000)
+      }
     // typewritereffect
-    const words = ["twoją nieruchomością", "twoim mieszkaniem", "twoim domem", "twoim biurem", "twoją działką"];
+    const words = ["twoją Nieruchomością", "twoim Mieszkaniem", "twoim Domem", "twoim Biurem", "twoją Działką"];
     let wordIndex = 0;
     let charIndex = 0;
     let currentWord = '';

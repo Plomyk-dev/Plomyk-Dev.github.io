@@ -11,7 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9643de004c.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
     <script src="./app.js"></script>
+    <script>
+         document.addEventListener("DOMContentLoaded", (event) => {
+            AOS.init();
+        });
+    </script>
 </head>
 <style>
     .underline-animation {
@@ -28,7 +35,7 @@
         height: 2px;
         bottom: 0;
         left: 0;
-        background-color: #111827;
+        background-color: #00B0F0;
         transition: width 0.3s ease-out;
     }
     .underline-animation:hover::after {
@@ -53,7 +60,46 @@
         <div class="underline-animation"><a class="underline-animation" href="#main">Strona główna</a></div>
         <div class="underline-animation"><a class="underline-animation" href="#aboutus">O nas</a></div>
         <div class="underline-animation"><a class="underline-animation" href="#contact">Kontakt</a></div>
+        <div class="underline-animation"><a class="underline-animation" href="#contact">Kontakt</a></div>
+        <div class="underline-animation"><a class="underline-animation" href="#contact">Kontakt</a></div>
+        <div class="underline-animation"><a class="underline-animation" href="#contact">Kontakt</a></div>
     </nav> -->
+    <nav x-data="{ isOpen: false }" class="fixed bg-gray-100 w-full" style="z-index: 99999999;">
+        <div class="container py-4 mx-5 md:flex md:justify-between md:items-center">
+            <div class="flex items-center justify-between">
+                <a href="#">
+                    <img class="w-auto sm:h-12" src="assets/logo.svg" alt="">
+                    <!-- <svg src="assets/logo.svg"></svg> -->
+                </a>
+    
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-900 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                        </svg>
+
+                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center">
+                <div class="flex flex-col md:flex-row md:ml-10">
+                    <a class="my-2 transition-colors duration-300 transform text-black underline-animation md:mx-4 md:my-0" href="#aboutus">O BIURZE</a>
+                    <a class="my-2 transition-colors duration-300 transform text-black underline-animation md:mx-4 md:my-0" href="#clientInfo">DLA KUPUJĄCEGO</a>
+                    <a class="my-2 transition-colors duration-300 transform text-black underline-animation md:mx-4 md:my-0" href="#clientInfo">DLA SPRZEDAJĄCEGO</a>
+                    <a class="my-2 transition-colors duration-300 transform text-black underline-animation md:mx-4 md:my-0" href="#clientInfo">DLA WYNAJMUJĄCEGO</a>
+                    <a class="my-2 transition-colors duration-300 transform text-black underline-animation md:mx-4 md:my-0" href="#contact">KONTAKT</a>
+                    <a class="my-2 transition-colors duration-300 transform text-black underline-animation md:mx-4 md:my-0" href="#map">OBSZAR DZIAŁANIA</a>
+                </div>
+            </div>
+        </div>
+    </nav>
     <!-- <div class="flex items-center justify-center h-screen bg-gray-100 smoothAnim" id="main">
         <div class="grid grid-cols-2 gap-4 p-8 bg-white rounded-lg shadow-lg w-12xl" style="min-width: 60%;">
             <div class="flex flex-col justify-center">
@@ -76,20 +122,23 @@
             </div>
         </div>
     </div> -->
-    <section class="relative bg-cover bg-center bg-no-repeat image-url-smooth mb-8" id="slideshow-image">
+    <section class="relative bg-cover bg-center bg-no-repeat image-url-smooth bg-gray-100" id="slideshow-image">
         <div class="absolute inset-0 bg-gray-900/75 bg-transparent from-gray-900/95 to-gray-900/25 bg-gradient-to-r bg-gradient-to-l"></div>
 
         <div class="relative mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
             <div class="max-w-xl">
                 <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
-                    Alternatywne Biuro
+                    Alternatywne Biuro.PL
                 </h1>
 
                 <p class=" max-w-lg text-white sm:text-xl/relaxed">
                     Zajmiemy się <span class="typewriter"></span>
                 </p>
                 <p class="mt-2 max-w-lg text-gray-300 sm:text-base/relaxed">
-                    Zapewnimy Ci najlepszą cenę na rynku, a współpraca z nami to pewny zwrot z inwestycji oraz mniej stresu i więcej czasu dla Ciebie.
+                    Pomożemy ci osiągnąć najwyższą możliwą cenę.
+                </p>
+                <p class="mt-1 max-w-lg text-gray-300 sm:text-base/relaxed">
+                    Przekonaj się że współpraca z nami to doskonała inwestycja która zaoszczędzi ci czas.
                 </p>
 
                 <div class="mt-8 flex flex-wrap gap-4 text-center">
@@ -103,15 +152,15 @@
             </div>
         </div>
     </section>
-    <section class="bg-gray-100 smoothAnim" id="aboutus">
+    <section class="bg-gray-100 smoothAnim mt-8" id="aboutus">
         <div class="mx-auto px-4">
             <div class="text-left mb-4">
-                <h2 class="text-4xl font-bold text-gray-800">O nas</h2>
+                <h2 class="text-4xl font-bold text-gray-800">// O nas</h2>
             </div>
 
             <!-- main desc -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-lg gap-4 flex flex-col">
+                <div class="bg-white p-6 rounded-lg shadow-lg gap-4 flex flex-col" data-aos="fade-right">
                     <h3 class="text-2xl font-semibold mb-4 text-gray-800">Kim jesteśmy?</h3>
                     <p class="text-gray-700 leading-relaxed">
                         Prawo Budowlane, Rozporządzenie w sprawie warunków technicznych budynku i ich usytuowanie, Kodeks Cywilny, Ustawa o Gospodarce Nieruchomościami, Ustawa o własności lokali, - czy Twój pośrednik przeczytał choć raz któryś z tych dokumentów? 
@@ -135,7 +184,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12" id="clientInfo">
                 <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                     <div class="flex content-center items-center justify-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" height="4rem" viewBox="0 -960 960 960" width="4rem" fill="#4b5563"><path d="M292.31-115.38q-25.31 0-42.66-17.35-17.34-17.35-17.34-42.65 0-25.31 17.34-42.66 17.35-17.34 42.66-17.34 25.31 0 42.65 17.34 17.35 17.35 17.35 42.66 0 25.3-17.35 42.65-17.34 17.35-42.65 17.35Zm375.38 0q-25.31 0-42.65-17.35-17.35-17.35-17.35-42.65 0-25.31 17.35-42.66 17.34-17.34 42.65-17.34t42.66 17.34q17.34 17.35 17.34 42.66 0 25.3-17.34 42.65-17.35 17.35-42.66 17.35ZM235.23-740 342-515.38h265.38q6.93 0 12.31-3.47 5.39-3.46 9.23-9.61l104.62-190q4.61-8.46.77-15-3.85-6.54-13.08-6.54h-486Zm-19.54-40h520.77q26.08 0 39.23 21.27 13.16 21.27 1.39 43.81l-114.31 208.3q-8.69 14.62-22.58 22.93-13.88 8.31-30.5 8.31H324l-48.62 89.23q-6.15 9.23-.38 20 5.77 10.77 17.31 10.77h435.38v40H292.31q-35 0-52.23-29.5-17.23-29.5-.85-59.27l60.15-107.23L152.31-820H80v-40h97.69l38 80ZM342-515.38h280-280Z"/></svg>
@@ -173,20 +222,20 @@
         <div class="py-12">
             <div class="mx-auto px-4">
                 <div class="mb-4">
-                    <h2 class="text-4xl font-bold text-gray-800">Kontakt</h2>
+                    <h2 class="text-4xl font-bold text-gray-800">// Kontakt</h2>
                 </div>
     
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <!-- Adres -->
                     <div class="bg-white p-6 rounded border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
                         <svg class="" xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="3rem" fill="#000000"><path d="M80-120v-720h400v160h400v560H80Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h320v-400H480v80h80v80h-80v80h80v80h-80v80Zm160-240v-80h80v80h-80Zm0 160v-80h80v80h-80Z"/></svg>
-                        <p class="text-gray-700">Ave Street 177, New York, USA</p>
+                        <p class="text-gray-700">Województwo Śląskie (Gliwice, Knurów)</p>
                     </div>
     
                     <!-- Telefon -->
                     <div class="bg-white p-6 rounded border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
                         <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="3rem" fill="#000000"><path d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg>
-                        <p class="text-gray-700">+48 666 666 666</p>
+                        <p class="text-gray-700">+48 666 626 624</p>
                     </div>
     
                     <!-- Email -->
@@ -195,30 +244,30 @@
                         <p class="text-gray-700">kontakt@alternatywne-biuro.pl</p>
                     </div>
                     <!-- Social Media -->
-                    <div class="bg-white p-6 rounded border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
+                    <!-- <div class="bg-white p-6 rounded border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
                         <div class="flex justify-center space-x-6">
                             <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-2xl fa-facebook"></i></a>
                             <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-2xl fa-linkedin"></i></a>
                             <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-2xl fa-instagram"></i></a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="mb-4">
-                    <h2 class="text-4xl font-bold text-gray-800">Obszar działania</h2>
+                    <h2 class="text-4xl font-bold text-gray-800">// Obszar działania</h2>
                 </div>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2947148415305!2d-74.01493547335302!3d40.71152823764361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a19881b83fb%3A0x979b0a4fe0492ce6!2sWorld%20Trade%20Center%2C%20Nowy%20Jork%2C%20Stany%20Zjednoczone!5e0!3m2!1spl!2spl!4v1728326170721!5m2!1spl!2spl" style="width: 100%; height: 40rem; outline: 2px solid #33333322; outline-offset: 3px;" allowfullscreen=" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81552.20102297!2d18.567084645097108!3d50.30114335864519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471130606c66b15f%3A0x9bbca89f06cbea11!2sGliwice!5e0!3m2!1spl!2spl!4v1730823430872!5m2!1spl!2spl" style="width: 100%; height: 40rem; outline: 2px solid #33333322; outline-offset: 3px;" allowfullscreen=" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
-
-    <footer class="flex flex-col items-center p-2 content-center">
+    <img class="hidden" alt="preloader" />
+    <footer class="flex flex-col items-center p-2 content-center bg-gray-800">
         <div class="flex justify-center items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#000000"><path d="M400-320h160q17 0 28.5-11.5T600-360v-80h-80v40h-80v-160h80v40h80v-80q0-17-11.5-28.5T560-640H400q-17 0-28.5 11.5T360-600v240q0 17 11.5 28.5T400-320Zm80 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            <p>alternatywne-biuro.pl</p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#FFFFFF"><path d="M400-320h160q17 0 28.5-11.5T600-360v-80h-80v40h-80v-160h80v40h80v-80q0-17-11.5-28.5T560-640H400q-17 0-28.5 11.5T360-600v240q0 17 11.5 28.5T400-320Zm80 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            <p class="text-white">alternatywne-biuro.pl</p>
         </div>
-        <p>Created by <a href="https://lostowl.pl"><span class="underline-animation" style="color:#2563eb ">LostOwl Interactive</span><a></p>
+        <p class="text-gray-300">Created by <a href="https://lostowl.pl"><span class="underline-animation" style="color:#2563eb ">LostOwl Interactive</span><a></p>
     </footer>
 </body>
 </html>
