@@ -55,21 +55,11 @@
     }
 </style>
 <body>
-    <!-- <nav class="fixed flex gap-4" style="z-index: 99999999;">
-        <img class="ml-4" src="https://picsum.photos/50" alt="Logo of the alternatywne-biuro.pl company">
-        <div class="underline-animation"><a class="underline-animation" href="#main">Strona główna</a></div>
-        <div class="underline-animation"><a class="underline-animation" href="#aboutus">O nas</a></div>
-        <div class="underline-animation"><a class="underline-animation" href="#contact">Kontakt</a></div>
-        <div class="underline-animation"><a class="underline-animation" href="#contact">Kontakt</a></div>
-        <div class="underline-animation"><a class="underline-animation" href="#contact">Kontakt</a></div>
-        <div class="underline-animation"><a class="underline-animation" href="#contact">Kontakt</a></div>
-    </nav> -->
-    <nav x-data="{ isOpen: false }" class="fixed bg-gray-100 w-full" style="z-index: 99999999;">
-        <div class="container py-4 mx-5 md:flex md:justify-between md:items-center">
+    <nav x-data="{ isOpen: false }" class="fixed bg-gray-100 w-screen" style="z-index: 99999999;">
+        <div class="container py-4 px-6 md:flex md:justify-between md:items-center">
             <div class="flex items-center justify-between">
                 <a href="#">
                     <img class="w-auto sm:h-12" src="assets/logo.svg" alt="">
-                    <!-- <svg src="assets/logo.svg"></svg> -->
                 </a>
     
                 <!-- Mobile menu button -->
@@ -100,28 +90,6 @@
             </div>
         </div>
     </nav>
-    <!-- <div class="flex items-center justify-center h-screen bg-gray-100 smoothAnim" id="main">
-        <div class="grid grid-cols-2 gap-4 p-8 bg-white rounded-lg shadow-lg w-12xl" style="min-width: 60%;">
-            <div class="flex flex-col justify-center">
-                <p class="text-sm text-gray-500 uppercase tracking-wide">// alternatywne-biuro.pl</p>
-                <h1 class="text-4xl font-bold text-gray-900 leading-tight">Zajmiemy się <br> twoją <span class="typewriter"></span></h1>
-                <div class="flex flex-col">
-                    <a href="#aboutus"
-                        class="inline-block mt-6 px-6 py-3 text-sm font-medium text-white bg-gray-800 hover:bg-gray-900 rounded">
-                        O nas
-                    </a>
-                    <a href="#contact"
-                        class="inline-block mt-1 px-6 py-3 text-sm font-medium text-white bg-gray-800 hover:bg-gray-900 rounded">
-                        Kontakt
-                    </a>
-                </div>
-            </div>
-            
-            <div class="tilt-image relative hideOnMobile">
-                <img src="./assets/1_1.jpg" alt="Photo of property" class="object-cover transform rotate-2 shadow-lg w-10 h-2" style="width: 40rem; height: 30rem;">
-            </div>
-        </div>
-    </div> -->
     <section class="relative bg-cover bg-center bg-no-repeat image-url-smooth bg-gray-100" id="slideshow-image">
         <div class="absolute inset-0 bg-gray-900/75 bg-transparent from-gray-900/95 to-gray-900/25 bg-gradient-to-r bg-gradient-to-l"></div>
 
@@ -155,7 +123,7 @@
     <section class="bg-gray-100 smoothAnim mt-8" id="aboutus">
         <div class="mx-auto px-4">
             <div class="text-left mb-4">
-                <h2 class="text-4xl font-bold text-gray-800">// O nas</h2>
+                <h2 class="text-4xl font-bold text-gray-800">O nas</h2>
             </div>
 
             <!-- main desc -->
@@ -222,7 +190,7 @@
         <div class="py-12">
             <div class="mx-auto px-4">
                 <div class="mb-4">
-                    <h2 class="text-4xl font-bold text-gray-800">// Kontakt</h2>
+                    <h2 class="text-4xl font-bold text-gray-800">Kontakt</h2>
                 </div>
     
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
@@ -254,7 +222,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <h2 class="text-4xl font-bold text-gray-800">// Obszar działania</h2>
+                    <h2 class="text-4xl font-bold text-gray-800">Obszar działania</h2>
                 </div>
 
                 <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81552.20102297!2d18.567084645097108!3d50.30114335864519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471130606c66b15f%3A0x9bbca89f06cbea11!2sGliwice!5e0!3m2!1spl!2spl!4v1730823430872!5m2!1spl!2spl" style="width: 100%; height: 40rem; outline: 2px solid #33333322; outline-offset: 3px;" allowfullscreen=" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
