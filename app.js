@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log('DOM loaded')
-    var data = new Date()
+    var date = new Date()
     // Rotate effect
     // const tiltImageContainer = document.querySelector('.tilt-image');
     // const image = tiltImageContainer.querySelector('img');
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     //     image.style.transform = 'rotateX(0deg) rotateY(0deg)';
     // });
 
-
+    document.getElementById('cr').textContent = `alternatywne-biuro.pl 2019 - ${date.getFullYear()}`
     const images = [
         './assets/3_1.jpg',
         './assets/3_2.jpg',
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }, 7000)
       }
     // typewritereffect
-    const words = ["twoją Nieruchomością", "twoim Mieszkaniem", "twoim Domem", "twoim Biurem", "twoją Działką"];
+    const words = ["Twoim Mieszkaniem", "Twoim Domem", "Twoim Biurem", "Twoją Działką", "Twoim Wynajmem"];
     let wordIndex = 0;
     let charIndex = 0;
     let currentWord = '';
