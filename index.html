@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Biuro nieruchomości Gliwice, Biuro nieruchomości Gliwice, Biuro nieruchomości Knurów, Biuro nieruchomości Rybnik, obsługa wynajmu Gliwice, obsługa wynajmu Zabrze, obsługa wynajmu Knurów, obsługa wynajmu Rybnik, Alternatywne biuro nieruchomości, zarządzanie najmem, najem Gliwice, najem Rybnik, najem Knurów, najem Zabrze, pośrednik nieruchomości Gliwice, pośrednik nieruchomości Zabrze, pośrednik nieruchomości Rybnik, agent nieruchomości Gliwice, agent nieruchomości Knurów, agent nieruchomości Rybnik">
     <title>Alternatywne Biuro</title>
     <link href="./output.css" rel="stylesheet">
     <script src="particles.js"></script>
@@ -12,11 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9643de004c.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/alpinejs" defer></script>
     <script src="./app.js"></script>
     <script>
-         document.addEventListener("DOMContentLoaded", (event) => {
+        document.addEventListener("DOMContentLoaded", (event) => {
             AOS.init();
+            setTimeout(() => {
+                document.querySelector('.preloader').style.display = 'none'; 
+            }, 300);
         });
     </script>
 </head>
@@ -43,7 +48,7 @@
     }
 
     /* Anchor smooth anim */
-    #contact {
+    * {
         scroll-behavior: smooth;
     }
 
@@ -55,6 +60,28 @@
     }
 </style>
 <body>
+    
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big ">
+          <svg height="30" width="30">
+            <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+          </svg>
+        </div>
+        
+        <div class="cursor__ball cursor__ball--small">
+          <svg height="10" width="10">
+            <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+          </svg>
+        </div>
+      </div>
     <nav x-data="{ isOpen: false }" class="fixed bg-gray-100 w-screen" style="z-index: 99999999;">
         <div class="container py-4 px-6 md:flex md:items-center ">
             <div class="flex items-center justify-between">
@@ -96,26 +123,24 @@
         <div class="absolute inset-0 bg-gray-900/75 bg-transparent from-gray-900/95 to-gray-900/25 bg-gradient-to-r bg-gradient-to-l"></div>
 
         <div class="relative mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
-            <div class="max-w-xl">
+            <div class="max-w-xl" data-aos="fade-up">
                 <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
                     Alternatywne-Biuro.PL
                 </h1>
-
+                
                 <p class=" max-w-lg text-white sm:text-xl/relaxed">
                     Zajmiemy się <span class="typewriter"></span>
                 </p>
-                <!-- <p class="mt-2 max-w-lg text-gray-300 sm:text-base/relaxed">
-                    Pomożemy Ci osiągnąć najwyższą możliwą cenę.
-                </p> -->
+
                 <p class="mt-1 max-w-lg text-gray-300 sm:text-base/relaxed">
                     Przekonaj się że współpraca z nami to doskonała inwestycja, która pomoże Ci zaoszczędzić czas.
                 </p>
 
                 <div class="mt-8 flex flex-wrap gap-4 text-center">
-                    <a href="#aboutus" class="transition block w-full rounded bg-white px-12 py-3 text-sm font-medium text-gray-900 shadow hover:text-white hover:bg-gray-900 focus:outline-none focus:ring active:text-gray-500 sm:w-auto">
+                    <a data-aos="fade-up" href="#aboutus" class="transition block w-full rounded bg-white px-12 py-3 text-sm font-medium text-gray-900 shadow hover:text-white hover:bg-gray-900 focus:outline-none focus:ring active:text-gray-500 sm:w-auto">
                         Dowiedz się więcej
                     </a>
-                    <a href="#contact" class="transition block w-full rounded bg-white px-12 py-3 text-sm font-medium text-gray-900 shadow hover:text-white hover:bg-gray-900 focus:outline-none focus:ring active:text-gray-500 sm:w-auto">
+                    <a data-aos="fade-up" href="#contact" class="transition block w-full rounded bg-white px-12 py-3 text-sm font-medium text-gray-900 shadow hover:text-white hover:bg-gray-900 focus:outline-none focus:ring active:text-gray-500 sm:w-auto">
                         Kontakt
                     </a>
                 </div>
@@ -130,7 +155,7 @@
 
             <!-- main desc -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-lg gap-4 flex flex-col" data-aos="fade-right">
+                <div class="bg-white p-6 rounded-lg shadow-lg gap-4 flex flex-col" data-aos="fade-up">
                     <h3 class="text-2xl font-semibold mb-4 text-gray-800">Kim jesteśmy?</h3>
                     <div class="flex">
                         <img src="./assets/4_1.jpg" class="w-32 h-32 rounded border border-gray-700">
@@ -143,54 +168,49 @@
                         </p>
                     </div>
                     <p class="text-gray-700 leading-relaxed text-justify">
-                        Od 15 lat pracujący z ludźmi, rozwiązujący ich problemy. Aktywnie inwestujący w nieruchomości inwestor, znający procesy kupna, sprzedaży oraz wynajmu nieruchomości.
+                        Od 15 lat pracuję z ludźmi i rozwiązuje ich problemy. Aktywnie inwestuje w nieruchomości, a procesy sprzedaży, kupna i wynajmu znam jak własną kieszeń. Nie ma dla mnie rzeczy niemożliwych. 
                     </p>
                     <p class="text-gray-700 leading-relaxed text-justify">
-                        Zawsze uśmiechnięty, pełen empatii, optymizmu i zapału do pomocy. Nie ma rzeczy niemożliwych do zrobienia.
+                        Zapraszam do współpracy! 
                     </p>
-                    <p class="text-gray-700 leading-relaxed text-justify">
-                        Prawo Budowlane, Rozporządzenie w sprawie warunków technicznych budynku i ich usytuowanie, Kodeks Cywilny, 
-                        Ustawa o Gospodarce Nieruchomościami, Ustawa o własności lokali, - czy Twój pośrednik przeczytał choć raz któryś z tych 
-                        dokumentów? 
-                    </p>
-                    <p class="text-gray-700 leading-relaxed text-justify">
-                        Ja je znam doskonale. Dlatego zapraszam do współpracy.
+                    <p class="text-gray-700 leading-relaxed text-right w-full">
+                        Łukasz Bardeli – właściciel biura 
                     </p>
                 </div>
 
-                <div class="flex items-center justify-center">
+                <div class="flex items-center justify-center" data-aos="fade-up">
                     <img src="./assets/2_2.jpg" alt="Nasz zespół" class="rounded-lg shadow-lg">
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12" id="clientInfo">
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center" data-aos="fade-up">
                     <div class="flex content-center items-center justify-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" height="4.5rem" viewBox="0 -960 960 960" width="4.5rem" fill="#4b5563"><path d="M292.31-115.38q-25.31 0-42.66-17.35-17.34-17.35-17.34-42.65 0-25.31 17.34-42.66 17.35-17.34 42.66-17.34 25.31 0 42.65 17.34 17.35 17.35 17.35 42.66 0 25.3-17.35 42.65-17.34 17.35-42.65 17.35Zm375.38 0q-25.31 0-42.65-17.35-17.35-17.35-17.35-42.65 0-25.31 17.35-42.66 17.34-17.34 42.65-17.34t42.66 17.34q17.34 17.35 17.34 42.66 0 25.3-17.34 42.65-17.35 17.35-42.66 17.35ZM235.23-740 342-515.38h265.38q6.93 0 12.31-3.47 5.39-3.46 9.23-9.61l104.62-190q4.61-8.46.77-15-3.85-6.54-13.08-6.54h-486Zm-19.54-40h520.77q26.08 0 39.23 21.27 13.16 21.27 1.39 43.81l-114.31 208.3q-8.69 14.62-22.58 22.93-13.88 8.31-30.5 8.31H324l-48.62 89.23q-6.15 9.23-.38 20 5.77 10.77 17.31 10.77h435.38v40H292.31q-35 0-52.23-29.5-17.23-29.5-.85-59.27l60.15-107.23L152.31-820H80v-40h97.69l38 80ZM342-515.38h280-280Z"/></svg>
                     </div>    
                     <h4 class="text-xl font-semibold mb-2">DLA KUPUJĄCEGO</h4>
                     <p class="text-gray-700">
-                        Jeżeli masz nieruchomość do kupienia ale nie czujesz się na siłach aby ogarnąć proces kupna i nie wiesz od czego zacząć, proszę skontaktuj się ze mną. Nie obawiaj się nie wiadomo jakiej prowizji - moje wynagrodzenie będzie adekwatne do czynności jakie trzeba wykonać. Biorę za nią pełną odpowiedzialność - jestem ubezpieczony.
+                        Jeżeli masz nieruchomość do kupienia ale nie czujesz się na siłach aby ogarnąć proces kupna i nie wiesz od czego zacząć, proszę skontaktuj się ze mną. Nie obawiaj się nie wiadomo jakiej prowizji - moje wynagrodzenie będzie adekwatne do czynności jakie trzeba wykonać.
                     </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center" data-aos="fade-up">
                     <div class="flex content-center items-center justify-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" height="4.5rem" viewBox="0 -960 960 960" width="4.5rem" fill="#4b5563"><path d="M820.62-393.85 566.15-139.38q-9.8 9.69-22.05 14.53-12.25 4.85-24.37 4.85-12.11 0-24.23-4.85-12.12-4.84-21.81-14.53L139.15-473.15q-9.46-8.7-14.3-20.72-4.85-12.02-4.85-25.28v-255.47q0-26.97 18.88-46.17Q157.77-840 185.38-840h255.47q12.97 0 25.14 5.25t21.09 14.13l333.54 333.77q9.99 9.81 14.57 22.06 4.58 12.25 4.58 24.65 0 12.4-4.58 24.39-4.58 11.98-14.57 21.9Zm-283 226.16 254.46-254.46q7.69-7.7 7.69-18.08 0-10.39-7.69-18.08L450.62-799.23H185.38q-10.76 0-18.07 6.92-7.31 6.93-7.31 17.69v255.24q0 4.61 1.54 9.23 1.54 4.61 5.38 8.46l334.54 334q7.69 7.69 18.08 7.69 10.38 0 18.08-7.69Zm-275.63-490q16.86 0 28.59-11.67t11.73-28.33q0-16.99-11.67-28.88t-28.33-11.89q-16.99 0-28.88 11.8t-11.89 28.65q0 16.86 11.8 28.59t28.65 11.73Zm219.55 179.23Z"/></svg>
                     </div>
                     <h4 class="text-xl font-semibold mb-2">DLA SPRZEDAJĄCEGO</h4>
                     <p class="text-gray-700">
-                        Jeżeli masz nieruchomość do sprzedania i chciałbyś o tym porozmawiać, proszę skontaktuj się ze mną. Nie obawiaj się nie wiadomo jakiej prowizji - moje wynagrodzenie będzie adekwatne do czynności jakie trzeba wykonać. Biorę za nią pełną odpowiedzialność - jestem ubezpieczony.
+                        Jeżeli masz nieruchomość do sprzedania i chciałbyś o tym porozmawiać, proszę skontaktuj się ze mną. Nie obawiaj się nie wiadomo jakiej prowizji - moje wynagrodzenie będzie adekwatne do czynności jakie trzeba wykonać.
                     </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center" data-aos="fade-up">
                     <div class="flex content-center items-center justify-center mb-3">
                         <img src="./assets/5_1.svg" class="w-28 h-auto" alt="">
                     </div>
                     <h4 class="text-xl font-semibold mb-2">DLA WYNAJMUJĄCEGO</h4>
                     <p class="text-gray-700">
-                        Jeżeli posiadasz nieruchomość do wynajmu i nie wiesz jak to ogarnąć, proszę zgłoś się do mnie a na pewno Ci pomogę. Podzielę się z Tobą moim wieloletnim doświadczeniem z zakresu wynajmu nieruchomościami. Posiadam wiele wzorów umów, które wypracowywałem przez lata, dlatego też masz gwarancję iż będzie to zrobione przez praktyka a nie teoretyka. Nie obawiaj się nie wiadomo jakiej prowizji - moje wynagrodzenie będzie adekwatne do czynności jakie trzeba wykonać. 
+                        Jeżeli posiadasz nieruchomość do wynajmu i nie wiesz jak to ogarnąć, proszę zgłoś się do mnie a na pewno Ci pomogę. Podzielę się z Tobą moim wieloletnim doświadczeniem w tym zakresie. Posiadam wiele wzorów umów, które wypracowywałem przez lata, dlatego też masz gwarancję iż będzie to zrobione przez praktyka a nie teoretyka. Nie obawiaj się nie wiadomo jakiej prowizji - moje wynagrodzenie będzie adekwatne do czynności jakie trzeba wykonać. 
                     </p>
                 </div>
             </div>
@@ -206,25 +226,25 @@
     
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 contact_container">
                     <!-- Adres -->
-                    <div class="bg-white p-6 rounded shadow-lg border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
+                    <div data-aos="fade-up" class="bg-white p-6 rounded shadow-lg border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
                         <svg class="" xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="3rem" fill="#000000"><path d="M80-120v-720h400v160h400v560H80Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h320v-400H480v80h80v80h-80v80h80v80h-80v80Zm160-240v-80h80v80h-80Zm0 160v-80h80v80h-80Z"/></svg>
                         <p class="text-gray-700 font-medium">Województwo Śląskie</p>
                     </div>
     
                     <!-- Telefon -->
-                    <div class="bg-white p-6 rounded shadow-lg border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
+                    <div data-aos="fade-up" class="bg-white p-6 rounded shadow-lg border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
                         <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="3rem" fill="#000000"><path d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg>
                         <p class="text-gray-700 font-medium">+48 666 626 624</p>
                     </div>
     
                     <!-- Email -->
-                    <div class="bg-white p-6 rounded shadow-lg border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
+                    <div data-aos="fade-up" class="bg-white p-6 rounded shadow-lg border-[#E0E0E0] border-2 flex flex-col items-center text-center justify-center content-center">
                         <svg xmlns="http://www.w3.org/2000/svg" height="3rem" viewBox="0 -960 960 960" width="3rem" fill="#000000"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
                         <p class="text-gray-700 font-medium">kontakt@alternatywne-biuro.pl</p>
                      </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6" data-aos="fade-up">
                     <img src="./assets/6_1.svg" class="w-full shadow-lg" alt="">
                     <img src="./assets/6_2.svg" class="w-full shadow-lg" alt="">
                     <img src="./assets/6_3.svg" class="w-full shadow-lg" alt="">
@@ -235,17 +255,17 @@
                 </div>
 
                 <div class="flex flex-col gap-4 lg:flex-row">
-                    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81552.20102297!2d18.567084645097108!3d50.30114335864519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471130606c66b15f%3A0x9bbca89f06cbea11!2sGliwice!5e0!3m2!1spl!2spl!4v1730823430872!5m2!1spl!2spl" style="width: 100%; height: 40rem; outline: 2px solid #33333322; outline-offset: 3px;" allowfullscreen=" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <iframe id="map"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81878.62553315358!2d18.46686906100974!3d50.11049009447387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471148d6419d8e49%3A0xc26d40f9f9b53851!2sRybnik!5e0!3m2!1spl!2spl!4v1732899304580!5m2!1spl!2spl" style="width: 100%; height: 40rem; outline: 2px solid #33333322; outline-offset: 3px;" allowfullscreen=" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe id="map" data-aos="fade-up" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81552.20102297!2d18.567084645097108!3d50.30114335864519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471130606c66b15f%3A0x9bbca89f06cbea11!2sGliwice!5e0!3m2!1spl!2spl!4v1730823430872!5m2!1spl!2spl" style="width: 100%; height: 40rem; outline: 2px solid #33333322; outline-offset: 3px;" allowfullscreen=" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe id="map" data-aos="fade-up"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81878.62553315358!2d18.46686906100974!3d50.11049009447387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471148d6419d8e49%3A0xc26d40f9f9b53851!2sRybnik!5e0!3m2!1spl!2spl!4v1732899304580!5m2!1spl!2spl" style="width: 100%; height: 40rem; outline: 2px solid #33333322; outline-offset: 3px;" allowfullscreen=" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </section>
     <img class="hidden" alt="preloader" />
-    <footer class="flex flex-col items-center p-2 content-center bg-gray-800">
-        <div class="flex justify-center items-center">
+    <footer class="flex flex-col items-center p-2 content-center bg-[#0C0D0D]">
+        <div class="flex justify-center gap-1 items-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#FFFFFF"><path d="M400-320h160q17 0 28.5-11.5T600-360v-80h-80v40h-80v-160h80v40h80v-80q0-17-11.5-28.5T560-640H400q-17 0-28.5 11.5T360-600v240q0 17 11.5 28.5T400-320Zm80 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            <p class="text-white" id="cr">alternatywne-biuro.pl 2019 - 2022224</p>
+            <p class="text-white" id="cr">alternatywne-biuro.pl 2019 - 2025</p>
         </div>
         <p class="text-gray-300">Created by <a href="https://lostowl.pl"><span class="underline-animation" style="color:#2563eb ">LostOwl Interactive</span><a></p>
     </footer>
